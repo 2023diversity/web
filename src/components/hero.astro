@@ -6,27 +6,26 @@ import { Icon } from "astro-icon";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  class="grid lg:grid-cols-2 place-items-center pt-16 gap-4 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
+      src='https://s3.ap-northeast-2.amazonaws.com/event-localnaeil/FileData/Article/202211/84b94849-304b-46dc-b5d6-9c4d28fe6b66.jpg'
+      alt="활동사진"
       widths={[200, 400, 600]}
       aspectRatio="4:3"
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       format="avif"
+      position="top" 
     />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      class="text-5xl lg:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+      동아리 Diversity
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+    <p class="text-lg mt-4 text-slate-600 max-w-[50ch]">
+      나를 알고, 참에 살며, 공부하며 일하는 동아리, DIVERSITY. 
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -35,9 +34,9 @@ import { Icon } from "astro-icon";
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        <Icon class="text-white w-5 h-5" name="fluent:info-24-regular" />
 
-        Download for Free
+       더 알아보기
       </Link>
       <Link
         size="lg"
@@ -47,7 +46,7 @@ import { Icon } from "astro-icon";
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
+        GitHub
       </Link>
     </div>
   </div>
