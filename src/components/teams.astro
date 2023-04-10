@@ -1,0 +1,54 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const teams = [
+  {
+    title: "알고리즘",
+    description:
+      "알고리즘은 코딩에 있어서 필수적인 요소입니다. Diversity는 알고리즘 역량을 향상시킬 수 있도록 도와줍니다.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "정보보안 & 해킹",
+    description:
+      "정보보안과 해킹에 대한 중요성은 오래 전부터 이미 증명되어 왔습니다. Diversity는 정보보안과 해킹의 미래를 책임질 차세대 인재를 계발합니다.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "임베디드 시스템",
+    description:
+      "반도체 및 전자기기 산업체가 발달한 대한민국에서 임베디드 시스템의 중요성은 여전히 강조됩니다. 임베디드 시스템에 대해 배울 수 있도록 함께 합니다. ",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "웹 프로그래밍",
+    description:
+      "웹 프로그래머는 인터넷이 상용화된 이후부터 수요가 꾸준히 증가하는 추세입니다. 웹 프로그래밍 인재 육성을 추구합니다.",
+    icon: "bx:bxs-bot",
+  },
+];
+---
+
+<div id="teams-section" class="bg-slate-950 text-slate-100">
+  <div class="py-16 my-8 max-w-screen-xl px-6 mx-auto">
+    <h1 class="text-4xl font-semibold">활동분야</h1>
+    <div class="grid sm:grid-cols-2 mt-8 gap-16">
+      {
+        teams.map((item) => (
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-slate-100 rounded-full p-2 w-8 h-8 shrink-0">
+              <Icon class="text-black" name={item.icon} />
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-slate-200">{item.title}</h3>{" "}
+              <p class="text-slate-300 mt-2 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

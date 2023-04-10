@@ -1,5 +1,4 @@
 ---
-import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
@@ -8,7 +7,7 @@ const menuitems = [
   {
     title: "소개",
     path: "/about",
-  }, 
+  },
   {
     title: "블로그",
     path: "/blog",
@@ -17,7 +16,7 @@ const menuitems = [
     title: "자주 묻는 질문",
     path: "/contact",
   },
- /*
+  /*
   {
     title: "",
     path: "#",
@@ -30,44 +29,43 @@ const menuitems = [
 ];
 ---
 
-<Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
-    <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg flex items-baseline"> 
-          <span class="font-semibold block ml-1 text-slate-800">Diversity</span>
-        </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
-        </div>
+<header
+  class="flex flex-col lg:flex-row justify-between items-center my-5 max-w-screen-xl mx-auto px-6">
+  <Astronav>
+    <div class="flex w-full lg:w-auto items-center justify-between">
+      <a href="/" class="text-xl flex items-baseline">
+        <span class="font-bold block ml-1 text-slate-800">Diversity</span>
+      </a>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800" />
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
+    </div>
+    <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+      <ul class="flex flex-col lg:flex-row lg:gap-3">
+        {
+          menuitems.map((item, index) => (
+            <>
+              {item.children && (
+                <Dropdown
+                  title={item.title}
+                  children={item.children}
+                  lastItem={index === menuitems.length - 1}
+                />
+              )}
 
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
-        </ul> 
-      </MenuItems>
-    </Astronav> 
-  </header>
-</Container>
+              {!item.children && (
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                    {item.title}
+                  </a>
+                </li>
+              )}
+            </>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
