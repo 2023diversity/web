@@ -11,35 +11,31 @@ import Contactform from "@components/contactform.astro";
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
+      <Fragment slot="desc">의견을 보내주세요.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
+    <div class="mx-auto mt-16">
+      <div class="text-center">
+        <h2 class="font-medium text-4xl text-gray-800">Contact Diversity</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+          의견이 있나요? 저희에게 알려주세요.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+          <div class="flex justify-center items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <span>서울 강남구 도곡로64길 21</span>
+          </div><div class="flex justify-center items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
+              href="mailto:diversity@jcde.xyz"
+              >diversity@jcde.xyz</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+          </div><div class="flex justify-center items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+              href="tel:+821040859839">01040859839</a
             >
           </div>
         </div>
-      </div>
-      <div>
-        <Contactform />
-      </div>
+      </div> 
     </div>
   </Container>
 </Layout>
