@@ -1,29 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+import Layout from '@layouts/Layout.astro';
+import Oh from './oh'
 ---
-
-<Layout title="About">
-  <Container>
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-4xl text-gray-800 mx-auto">
-        오장원의 페이지를 찾으셨군요!
-      </h2>
-      <p
-        class="text-lg leading-relaxed text-slate-500 text-center mx-auto mb-8 max-w-[52ch]">
-        그는 신입니다. 함부로 접근하지 마십시오!!!!
-      </p>
+<Layout title="oh" noFooter>
+    <div class="h-full w-full ">
+        <Oh client:load />
     </div>
-    <div>
-      <img src="https://s3.ap-northeast-2.amazonaws.com/event-localnaeil/FileData/Article/202104/fcb5b7b3-a72e-4cdd-8d07-0f9675912284.jpg" class="max-w-5xl mx-auto rounded-xl" />
-    </div>
-  </Container>
 </Layout>

@@ -92,11 +92,11 @@ const Tag = forwardRef<HTMLDivElement, HtmlProps >(({  ...props }, ref) => {
       <h1 className='whitespace-nowrap mx-auto block text-xl font-semibold tracking-[0.5em] lg:text-5xl lg:tracking-[1em] pl-[0.5em] lg:pl-[1em] mb-8 lg:mb-16 text-[#0a559c]'>탁월함을 넘어 감동으로</h1>
 
       <h2 className="font-bold text-2xl lg:text-4xl text-gray-800 mx-auto">
-        오장원 교장선생님의 페이지를 찾으셨군요!
+        ERROR
       </h2>
       <p
         className="lg:text-lg leading-relaxed text-slate-500 text-center mx-auto mb-8 max-w-[50ch]">
-        그는 신입니다. 함부로 접근하지 마십시오!!!!
+        Code:404
       </p>
     </div>
     </Html>
