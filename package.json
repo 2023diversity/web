@@ -13,16 +13,25 @@
   "dependencies": {
     "@astrojs/image": "^0.14.1",
     "@astrojs/mdx": "^0.16.0",
+    "@astrojs/react": "^2.1.1",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/tailwind": "^3.0.1",
     "@fontsource/inter": "^4.5.15",
+    "@react-three/drei": "^9.65.4",
+    "@react-three/fiber": "^8.12.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "astro": "^2.0.11",
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^0.8.0",
     "astro-navbar": "^1.1.5",
     "astro-seo": "^0.7.0",
     "gsap": "^3.11.5",
-    "tailwindcss": "^3.2.4"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-use-refs": "^1.0.1",
+    "tailwindcss": "^3.2.4",
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

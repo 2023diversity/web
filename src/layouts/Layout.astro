@@ -6,6 +6,7 @@ import Navbar from "@components/navbar/navbar.astro";
 
 export interface Props {
   title: string;
+  noFooter?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -15,11 +16,11 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
+const { title, noFooter } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "Diversity"
+  : "동아리 Diversity";
 ---
 
 <!DOCTYPE html>
@@ -33,30 +34,29 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="나를 알고, 참에 살며, 공부하며 일하는 동아리, DIVERSITY."
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@iojcde", 
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Diversity`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Diversity Homepage Screenshot",
         },
       }}
     />
   </head>
-  <body>
+  <body class={`${noFooter && 'h-[100vh-5rem]'}`}>
     <Navbar />
     <slot />
-    <Footer />
+  {!noFooter && <Footer />}
       <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
       <style is:global>
       /* Improve Page speed */
