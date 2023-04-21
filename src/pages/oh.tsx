@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { forwardRef, useEffect } from 'react'
 import { Canvas, ThreeElements, useFrame, useThree } from '@react-three/fiber'
-import { Html, useGLTF, SoftShadows, ScrollControls, useScroll, useTexture } from '@react-three/drei'
+import { Html, useGLTF, SoftShadows, ScrollControls, useScroll, useTexture, Scroll } from '@react-three/drei'
 import useRefs from 'react-use-refs'
 import { GroupProps } from '@react-three/fiber'
 import { HtmlProps } from '@react-three/drei/web/Html'
@@ -12,10 +12,15 @@ export default function App() {
   return (
     <div className='absolute inset-0'> 
       <Canvas  className='pb-[30vh] lg:pb-0' shadows dpr={[1, 2]} camera={{ position: [0, -3.2, 40], fov: 12 }}>
-        <ScrollControls  pages={5}>
+        <ScrollControls  damping={0.1} pages={5}>
           <Composition />
+          <Scroll html > 
+            <div id="oh" style={{ top:'500vh',position:'absolute' }}>oh</div>
+          </Scroll>
         </ScrollControls>
+       
       </Canvas>
+      
     </div>
   )
 }
@@ -89,7 +94,7 @@ const Tag = forwardRef<HTMLDivElement, HtmlProps >(({  ...props }, ref) => {
   return (
     <Html ref={ref} className="data" center {...props}>
   <div className="flex flex-col gap-3 mx-auto items-center mt-8">
-      <h1 className='whitespace-nowrap mx-auto block text-xl font-semibold tracking-[0.5em] lg:text-5xl lg:tracking-[1em] pl-[0.5em] lg:pl-[1em] mb-8 lg:mb-16 text-[#0a559c]'>탁월함을 넘어 감동으로</h1>
+      <a href="#oh" className='whitespace-nowrap mx-auto block text-xl font-semibold tracking-[0.5em] lg:text-5xl lg:tracking-[1em] pl-[0.5em] lg:pl-[1em] mb-8 lg:mb-16 text-[#0a559c]'>탁월함을 넘어 감동으로</a>
 
       <h2 className="font-bold text-2xl lg:text-4xl text-gray-800 mx-auto">
         ERROR
